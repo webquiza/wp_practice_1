@@ -147,22 +147,34 @@
             </div>
           </div>
           <div class="info">
+
+            <!--Practice looping over the Experiences data-->
+          
+          <?php
+            $mypod = pods('experience');
+            $mypod->find('start_end_date ASC');
+          ?>
+
+          <?php while ( $mypod->fetch() ) : ?>
+            <?php
+            // set our variables
+            $name= $mypod->field('name');
+            $content= $mypod->field('content');
+            $start_end_date= $mypod->field('start_end_date');
+            $location= $mypod->field('location');
+            $permalink= $mypod->field('permalink');
+            ?>
+
             <div class="info-box">
-              <h4>Graphic Artist - Nike</h4>
-              <span class="date">June 2012 - July 2013</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
+              <h4><?php echo $name ?> - <?php echo $location ?></h4>
+              <span class="date"><?php echo $start_end_date ?></span>
+              <p><?php echo $content ?></p>
             </div>
-            <div class="info-box">
-              <h4>Graphic Artist - Nike</h4>
-              <span class="date">June 2012 - July 2013</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-            <div class="info-box">
-              <h4>Graphic Artist - Nike</h4>
-              <span class="date">June 2012 - July 2013</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-          </div>
+
+          <?php endwhile; ?>
+          
+          <!-- End of Practice -->
+
         </div>
       </div>
     </section>
