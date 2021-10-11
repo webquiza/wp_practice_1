@@ -185,37 +185,38 @@
         </div>
         <div class="blog-container">
 
-          <!-- Practice looping over the Post data -->
+        <!-- Practice looping over the Post data -->
 
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-          <!-- start of post -->
-          <a href="<?php the_permalink(); ?>" class="post post-<?php the_ID(); ?>">
-            <div class="post-img" style="background: url('<?php the_post_thumbnail_url( 'small' ); ?>');"></div>
-            <div class="details">
-              <h4><?php the_title(); ?></h4>
-              <h4><?php the_content(); ?></h4>
-              <p><?php the_excerpt(); ?></p>
+        <!-- start of post -->
+        <a href="<?php the_permalink(); ?>" class="post post-<?php the_ID(); ?>">
+          <div class="post-img" style="background: url('<?php the_post_thumbnail_url( 'small' ); ?>');"></div>
+          <div class="details">
+            <h4><?php the_title(); ?></h4>
+            <h4><?php the_content(); ?></h4>
+            <p><?php the_excerpt(); ?></p>
+          </div>
+          <div class="more">
+            <div class="button">
+              Read More
             </div>
-            <div class="more">
-              <div class="button">
-                Read More
-              </div>
-            </div>
-          </a>
-          <!-- end of post -->
+          </div>
+        </a>
+        <!-- end of post -->
 
-            <?php endwhile; ?>
-            <?php else : ?>
-              <div>
-                <h1>Blogs Coming Soon</h1>
-              </div>
-            <?php endif; ?>
+          <?php endwhile; ?>
+          <?php else : ?>
+            <div>
+              <h1>Blogs Coming Soon</h1>
+            </div>
+          <?php endif; ?>
 
           <!-- End of practice -->
           
         </div>
       </div>
+      
     </section>
     <section id="testimonials-section">
       <div class="container">
